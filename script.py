@@ -12,6 +12,8 @@ def result():
     url = "http://api.apixu.com/v1/current.json?key=66ed38ae0ae842ac9fb124950181204&q=" + city
     r = requests.get(url)
     json_obj = r.json()
+    if 'location' not in json_obj:
+        return "There is no such location!"
     country = str(json_obj['location']['country'])
     region = str(json_obj['location']['region'])
     localtime = str(json_obj['location']['localtime'])
