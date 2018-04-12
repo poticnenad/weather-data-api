@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="page-header">
+        <h1><small><strong>{{ city }} ({{ country }})</strong> - region: {{ region }} <img src="{{ icon }}" alt="icon"/></small> </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p>Local time: {{ localtime }}, Last updated: {{ last_updated }}</p>
+        </div>
+        <div class="col-md-6">
+            <p align="right"><a href="{{ url_for('home') }}">Go back</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Temperature</h3>
+                </div>
+                <div class="panel-body">
+                    {{ temp }} &deg;C
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Wind</h3>
+                </div>
+                <div class="panel-body">
+                    {{ wind_kph }} km/h, direction {{ wind_dir }} ({{ wind_deg }})
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Visibility</h3>
+                </div>
+                <div class="panel-body">
+                    {{ vis_km }} km
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Air pressure</h3>
+                </div>
+                <div class="panel-body">
+                    {{ pa }} mbar
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Humidity</h3>
+                </div>
+                <div class="panel-body">
+                    {{ hum }} %
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Precipitation</h3>
+                </div>
+                <div class="panel-body">
+                    {{ precip_mm }} mm
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
