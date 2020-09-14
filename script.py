@@ -9,7 +9,7 @@ def result():
     city = request.form['city']
     if not len(city) > 0:
         city = "Niš"
-    url = "http://api.weatherstack.com/current/?access_key=de6a7ea4c895493e82b7e597ab0ed72a&query=" + city
+    url = "http://api.weatherstack.com/current?access_key=de6a7ea4c895493e82b7e597ab0ed72a&query=" + city
     r = requests.get(url)
     json_obj = r.json()
     if 'location' not in json_obj:
